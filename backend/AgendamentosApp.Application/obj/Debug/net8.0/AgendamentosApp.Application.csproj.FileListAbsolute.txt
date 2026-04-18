@@ -10,3 +10,7 @@
 /mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Application/obj/Debug/net8.0/refint/AgendamentosApp.Application.dll
 /mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Application/obj/Debug/net8.0/AgendamentosApp.Application.pdb
 /mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Application/obj/Debug/net8.0/ref/AgendamentosApp.Application.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Application/obj/Debug/net8.0/AgendamentosApp.Application.csproj.AssemblyReference.cache
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Application/bin/Debug/net8.0/AgendamentosApp.Domain.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Application/bin/Debug/net8.0/AgendamentosApp.Domain.pdb
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Application/obj/Debug/net8.0/AgendamentosApp.Application.csproj.CopyComplete

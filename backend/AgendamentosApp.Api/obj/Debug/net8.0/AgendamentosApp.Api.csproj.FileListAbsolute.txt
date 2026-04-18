@@ -110,3 +110,12 @@
 /mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/obj/Debug/net8.0/AgendamentosApp.Api.pdb
 /mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/obj/Debug/net8.0/AgendamentosApp.Api.genruntimeconfig.cache
 /mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/obj/Debug/net8.0/ref/AgendamentosApp.Api.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Api/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll

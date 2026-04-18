@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "Tgv5ce+VdWQ/b+xWtsnyzyj3a6mQd5mhUQ3C7nPZ5r+unnSDI29fPfXNqlha1hpuBq/oCHzoTCyIOfCWgvrXgA==",
+  "dgSpecHash": "e6y+ZI9ozlsHbgF4sE/XA6JIeCwvElYyxNKzOdXgwgP0mQckYg4Ripr6JITGwvyEWQ9ebHgib++E3Amv46AQug==",
   "success": true,
   "projectFilePath": "/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Application/AgendamentosApp.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/jonat/.nuget/packages/bcrypt.net-next/4.1.0/bcrypt.net-next.4.1.0.nupkg.sha512",
+    "/home/jonat/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "/home/jonat/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/home/jonat/.nuget/packages/microsoft.identitymodel.abstractions/8.0.0/microsoft.identitymodel.abstractions.8.0.0.nupkg.sha512",
+    "/home/jonat/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.0.0/microsoft.identitymodel.jsonwebtokens.8.0.0.nupkg.sha512",
+    "/home/jonat/.nuget/packages/microsoft.identitymodel.logging/8.0.0/microsoft.identitymodel.logging.8.0.0.nupkg.sha512",
+    "/home/jonat/.nuget/packages/microsoft.identitymodel.tokens/8.0.0/microsoft.identitymodel.tokens.8.0.0.nupkg.sha512",
+    "/home/jonat/.nuget/packages/system.identitymodel.tokens.jwt/8.0.0/system.identitymodel.tokens.jwt.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
