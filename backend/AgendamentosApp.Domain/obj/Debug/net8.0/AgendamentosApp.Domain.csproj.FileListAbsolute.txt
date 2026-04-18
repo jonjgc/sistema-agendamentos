@@ -1,0 +1,12 @@
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/bin/Debug/net8.0/AgendamentosApp.Domain.deps.json
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/bin/Debug/net8.0/AgendamentosApp.Domain.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/bin/Debug/net8.0/AgendamentosApp.Domain.pdb
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/obj/Debug/net8.0/AgendamentosApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/obj/Debug/net8.0/AgendamentosApp.Domain.AssemblyInfoInputs.cache
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/obj/Debug/net8.0/AgendamentosApp.Domain.AssemblyInfo.cs
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/obj/Debug/net8.0/AgendamentosApp.Domain.csproj.CoreCompileInputs.cache
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/obj/Debug/net8.0/AgendamentosApp.Domain.sourcelink.json
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/obj/Debug/net8.0/AgendamentosApp.Domain.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/obj/Debug/net8.0/refint/AgendamentosApp.Domain.dll
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/obj/Debug/net8.0/AgendamentosApp.Domain.pdb
+/mnt/c/Users/jonat/Projects/sistema-agendamentos/backend/AgendamentosApp.Domain/obj/Debug/net8.0/ref/AgendamentosApp.Domain.dll
