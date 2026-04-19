@@ -1,15 +1,31 @@
+version: '3.8'
+
 services:
   db:
-    image: postgres:15-alpine
-    container_name: agendamentos_db
+    image: postgres:15
+    container_name: fiesc_db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: Password123!
       POSTGRES_DB: fiesc_agendamentos
     ports:
       - "5433:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
 
-volumes:
-  pgdata:
+  backend:
+    build: ./backend
+    container_name: fiesc_api
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=fiesc_agendamentos;Username=postgres;Password=Password123!
+      - JwtSettings__Secret=MinhaChaveSuperSecretaParaOProjetoFiesc2026QueNinguemVaiAdivinhar
+    ports:
+      - "5067:80"
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: fiesc_web
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
