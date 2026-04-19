@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { api } from '../api/apiClient';
 import toast from 'react-hot-toast';
 import { UserPlus, ShieldCheck, Mail, CreditCard } from 'lucide-react';
+import { NovoUsuarioModal } from '../components/NovoUsuarioModal';
 
 interface Usuario {
   id: string;
@@ -14,6 +15,7 @@ interface Usuario {
 export function Usuarios() {
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
   const [loading, setLoading] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     carregarUsuarios();
@@ -51,7 +53,9 @@ export function Usuarios() {
           <h1 className="text-3xl font-bold text-gray-800">Gestão de Usuários</h1>
           <p className="text-gray-500 mt-1">Administre os acessos e permissões do sistema.</p>
         </div>
-        <button className="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors shadow-sm">
+        <button 
+        onClick={() => setModalOpen(true)}
+        className="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors shadow-sm">
           <UserPlus size={20} />
           Novo Usuário
         </button>
@@ -97,6 +101,11 @@ export function Usuarios() {
           </tbody>
         </table>
       </div>
+      <NovoUsuarioModal 
+        isOpen={modalOpen} 
+        onClose={() => setModalOpen(false)} 
+        onSuccess={carregarUsuarios} 
+      />
     </div>
   );
 }
