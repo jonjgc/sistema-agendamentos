@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgendamentosApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a197c9c42e5e655e84f980e509b25787413bd58d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2baa0d62e684bf1a53f0b0ea89ca64cd1a37469f")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgendamentosApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgendamentosApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

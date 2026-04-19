@@ -4,6 +4,7 @@ import { useAuthStore } from './store/authStore';
 import { Login } from './pages/Login';
 import { Layout } from './components/Layout';
 import { Agendamentos } from './pages/Agendamentos';
+import { Relatorios } from './pages/Relatorios';
 
 function PrivateRoute({ children }: { children: ReactNode }) {
   const token = useAuthStore((state) => state.token);
@@ -31,7 +32,7 @@ function App() {
           <Route path="/dashboard" element={<DashboardHome />} />
           <Route path="/agendamentos" element={<Agendamentos />} />
           <Route path="/usuarios" element={<div className="p-4">Página de Utilizadores em construção...</div>} />
-          <Route path="/relatorios" element={<div className="p-4">Página de Relatórios em construção...</div>} />
+          <Route path="/relatorios" element={<Relatorios />} />
         </Route>
       </Routes>
     </BrowserRouter>
