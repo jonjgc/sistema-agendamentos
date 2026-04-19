@@ -23,16 +23,14 @@ public class AgendamentosController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CriarAgendamentoRequest request)
     {
-        // 1. Pega o ID do usuário logado através do Token JWT
+
         var clienteIdStr = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         if (!Guid.TryParse(clienteIdStr, out var clienteId))
             return Unauthorized();
 
-        // 2. Validação: Não permitir agendamento no passado
         if (request.DataHorario <= DateTime.Now)
             return BadRequest(new { message = "Não é possível realizar agendamentos no passado." });
 
-        // 3. Validação: Checar conflito de horários para o Atendente
         var conflito = await _context.Agendamentos.AnyAsync(a => 
             a.AtendenteId == request.AtendenteId && 
             a.DataHorario == request.DataHorario &&
@@ -59,26 +57,33 @@ public class AgendamentosController : ControllerBase
         return Ok(agendamento);
     }
 
-    [HttpPatch("{id}/status")]
+        [HttpPatch("{id}/status")]
     public async Task<IActionResult> AlterarStatus(Guid id, [FromBody] AlterarStatusRequest request)
     {
         var agendamento = await _context.Agendamentos.FindAsync(id);
         if (agendamento == null) return NotFound();
 
-        var perfilUsuario = User.FindFirst(ClaimTypes.Role)?.Value;
+        var perfilUsuario = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
 
-        // Regra: Cliente só pode Cancelar
         if (perfilUsuario == "Cliente" && request.NovoStatus != StatusAgendamento.Cancelado)
             return Forbid("Clientes só podem cancelar agendamentos.");
 
-        // Regra: Justificativa obrigatória para Recusa ou Cancelamento
         if ((request.NovoStatus == StatusAgendamento.Recusado || request.NovoStatus == StatusAgendamento.Cancelado) 
             && string.IsNullOrWhiteSpace(request.Justificativa))
             return BadRequest(new { message = "Justificativa é obrigatória para recusar ou cancelar." });
 
-        // Regra: Resumo obrigatório ao Realizar atendimento
         if (request.NovoStatus == StatusAgendamento.Realizado && string.IsNullOrWhiteSpace(request.ResumoAtendimento))
             return BadRequest(new { message = "Resumo do atendimento é obrigatório para concluir." });
+        
+        if (request.NovoStatus == StatusAgendamento.Confirmado)
+        {
+            agendamento.DataConfirmacao = DateTime.UtcNow;
+        }
+        
+        if (request.NovoStatus == StatusAgendamento.Cancelado || request.NovoStatus == StatusAgendamento.Recusado)
+        {
+            agendamento.DataCancelamento = DateTime.UtcNow;
+        }
 
         agendamento.Status = request.NovoStatus;
         agendamento.JustificativaRecusa = request.Justificativa;
