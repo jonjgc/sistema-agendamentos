@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { api } from '../api/apiClient';
 import toast from 'react-hot-toast';
 import { Plus } from 'lucide-react';
+import { NovoAgendamentoModal } from '../components/NovoAgendamentoModal';
 
 interface Agendamento {
   nomeCliente: string;
@@ -15,6 +16,7 @@ interface Agendamento {
 export function Agendamentos() {
   const [agendamentos, setAgendamentos] = useState<Agendamento[]>([]);
   const [loading, setLoading] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     carregarAgendamentos();
@@ -55,7 +57,10 @@ export function Agendamentos() {
           <h1 className="text-3xl font-bold text-gray-800">Agendamentos</h1>
           <p className="text-gray-500 mt-1">Gira as consultas e atendimentos do sistema.</p>
         </div>
-        <button className="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors shadow-sm">
+        <button 
+          onClick={() => setModalOpen(true)} // <-- Adicione o onClick aqui
+          className="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors shadow-sm"
+        >
           <Plus size={20} />
           Novo Agendamento
         </button>
@@ -100,6 +105,11 @@ export function Agendamentos() {
           </table>
         </div>
       </div>
+      <NovoAgendamentoModal 
+        isOpen={modalOpen} 
+        onClose={() => setModalOpen(false)} 
+        onSuccess={carregarAgendamentos} 
+      />
     </div>
   );
 }
