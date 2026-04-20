@@ -94,7 +94,7 @@ export function Agendamentos() {
             <thead>
               <tr className="bg-gray-50 text-gray-600 border-b border-gray-200 text-sm">
                 <th className="p-4 font-semibold">Data/Hora</th>
-                <th className="p-4 font-semibold">Utente</th>
+                <th className="p-4 font-semibold">Responsável</th>
                 <th className="p-4 font-semibold">Atendente</th>
                 <th className="p-4 font-semibold">Status</th>
                 <th className="p-4 font-semibold text-center">Ações</th>
