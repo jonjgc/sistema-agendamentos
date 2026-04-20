@@ -6,6 +6,7 @@ import { Layout } from './components/Layout';
 import { Agendamentos } from './pages/Agendamentos';
 import { Relatorios } from './pages/Relatorios';
 import { Usuarios } from './pages/Usuarios';
+import { Disponibilidade } from './pages/Disponibilidade';
 
 function PrivateRoute({ children }: { children: ReactNode }) {
   const token = useAuthStore((state) => state.token);
@@ -45,6 +46,7 @@ function App() {
           <Route path="/agendamentos" element={<Agendamentos />} />
           <Route path="/usuarios" element={<Usuarios />} />
           <Route path="/relatorios" element={<Relatorios />} />
+          <Route path="/disponibilidade" element={<Disponibilidade />} />
         </Route>
       </Routes>
     </BrowserRouter>

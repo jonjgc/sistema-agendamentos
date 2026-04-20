@@ -1,7 +1,6 @@
-// import type { ReactNode } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
-import { CalendarDays, Users, PieChart, LogOut, LayoutDashboard } from 'lucide-react';
+import { CalendarDays, Users, PieChart, LogOut, LayoutDashboard, Clock } from 'lucide-react';
 
 export function Layout() {
   const { nome, perfil, logout } = useAuthStore();
@@ -9,6 +8,7 @@ export function Layout() {
   const menuItems = [
     { path: '/dashboard', icon: <LayoutDashboard size={20} />, label: 'Dashboard' },
     { path: '/agendamentos', icon: <CalendarDays size={20} />, label: 'Agendamentos' },
+    { path: '/disponibilidade', icon: <Clock size={20} />, label: 'Disponibilidade' },
     ...(perfil === 'Administrador' ? [
       { path: '/usuarios', icon: <Users size={20} />, label: 'Utilizadores' },
       { path: '/relatorios', icon: <PieChart size={20} />, label: 'Relatórios' }
