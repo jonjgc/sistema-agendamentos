@@ -71,6 +71,7 @@ public class RelatoriosController : ControllerBase
             .OrderByDescending(a => a.DataHorario)
             .Select(a => new
             {
+                Id = a.Id, // <-- O ID AGORA É RETORNADO AQUI
                 NomeCliente = a.Cliente!.Nome,
                 NomeAtendente = a.Atendente!.Nome,
                 DataAtendimento = a.DataHorario.ToString("yyyy-MM-dd"),

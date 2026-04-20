@@ -57,42 +57,20 @@ public class AgendamentosController : ControllerBase
         return Ok(agendamento);
     }
 
-        [HttpPatch("{id}/status")]
+    [HttpPatch("{id}/status")]
     public async Task<IActionResult> AlterarStatus(Guid id, [FromBody] AlterarStatusRequest request)
     {
         var agendamento = await _context.Agendamentos.FindAsync(id);
-        if (agendamento == null) return NotFound();
-
-        var perfilUsuario = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
-
-        if (perfilUsuario == "Cliente" && request.NovoStatus != StatusAgendamento.Cancelado)
-            return Forbid("Clientes só podem cancelar agendamentos.");
-
-        if ((request.NovoStatus == StatusAgendamento.Recusado || request.NovoStatus == StatusAgendamento.Cancelado) 
-            && string.IsNullOrWhiteSpace(request.Justificativa))
-            return BadRequest(new { message = "Justificativa é obrigatória para recusar ou cancelar." });
-
-        if (request.NovoStatus == StatusAgendamento.Realizado && string.IsNullOrWhiteSpace(request.ResumoAtendimento))
-            return BadRequest(new { message = "Resumo do atendimento é obrigatório para concluir." });
-        
-        if (request.NovoStatus == StatusAgendamento.Confirmado)
-        {
-            agendamento.DataConfirmacao = DateTime.UtcNow;
-        }
-        
-        if (request.NovoStatus == StatusAgendamento.Cancelado || request.NovoStatus == StatusAgendamento.Recusado)
-        {
-            agendamento.DataCancelamento = DateTime.UtcNow;
-        }
-
-        agendamento.Status = request.NovoStatus;
-        agendamento.JustificativaRecusa = request.Justificativa;
-        agendamento.ResumoAtendimento = request.ResumoAtendimento;
+        if (agendamento == null) 
+            return NotFound(new { message = "Agendamento não encontrado." });
+            
+        agendamento.Status = (Domain.Enums.StatusAgendamento)request.Status;
 
         await _context.SaveChangesAsync();
-        return Ok(agendamento);
+
+        return Ok(new { message = "Status alterado com sucesso." });
     }
 }
 
 public record CriarAgendamentoRequest(Guid AtendenteId, string Titulo, string? Descricao, string TipoAtendimento, DateTime DataHorario);
-public record AlterarStatusRequest(StatusAgendamento NovoStatus, string? Justificativa, string? ResumoAtendimento);
+public record AlterarStatusRequest(int Status, string? Justificativa = null, string? ResumoAtendimento = null);
