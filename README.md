@@ -1,0 +1,48 @@
+# Sistema de Agendamentos
+
+Aplicação WEB para gerenciar agendamentos de atendimentos e disponibilidade de agenda. 
+
+## Tecnologias Utilizadas
+- **Backend:** .NET 8 (C#), Entity Framework Core, PostgreSQL, JWT Authentication.
+- **Frontend:** React (Vite), Tailwind CSS v4, Zustand (Estado), Recharts (Gráficos).
+- **Arquitetura:** Clean Architecture (Domain, Application, Infrastructure, API), Testes Unitários (xUnit/Moq).
+- **DevOps:** Docker & Docker Compose.
+
+## Como Executar
+
+Faça o clone do projeto:
+
+```bash
+https://github.com/jonjgc/sistema-agendamentos.git
+```
+
+1. Certifique-se de ter o Docker instalado.
+2. Na raiz do projeto, execute:
+
+   ```bash
+   docker-compose up --build
+   ```
+3. Acesse ao Frontend em http://localhost:5173 e a API em http://localhost:5067/swagger.
+
+### Backend
+Os testes do backend cobrem os casos de uso, validações de domínio e rotas da API. Para executá-los:
+
+1. Abra o terminal e navegue até a pasta do backend:
+   ```bash
+   cd backend
+   ```
+2. Execute o comando nativo do .NET para rodar a suíte de testes:
+
+   ```bash
+   dotnet test
+   ```
+
+## Decisões de Arquitetura
+
+- **Separação em Camadas**: Garante que a regra de negócio (Domain) seja independente de tecnologias externas.
+
+- **Segurança:** Implementação de JWT com Roles (Admin, Atendente, Cliente) e Hashes de senha via BCrypt.
+
+- **Performance:** Consultas otimizadas com Projeções e Gráficos processados via agregação no banco.
+
+- **UI Moderno:** Uso de Tailwind v4 e Lucide Icons para uma interface limpa e responsiva.
