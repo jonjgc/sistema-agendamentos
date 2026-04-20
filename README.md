@@ -37,6 +37,23 @@ Os testes do backend cobrem os casos de uso, validações de domínio e rotas da
    dotnet test
    ```
 
+## Testar da aplicação
+
+Para testar a aplicação como um Admin, no swagger(http://localhost:5067/swagger) procure o endpoint vermelho POST /api/Usuarios, clique em Try it out e cole este JSON: 
+
+```bash
+{
+  "nome": "Admin",
+  "perfil": 1,
+  "email": "adminteste@gmail.com",
+  "senhaHash": "suAsenh4!",
+  "cpf": "023.027.000-03",
+  "ativo": true
+}
+```
+
+Clique em Execute. Se retornar o código 201, seu usuário foi criado e a senha criptografada no banco, faça o login com o email e senha que você acabou de criar.
+
 ## Decisões de Arquitetura
 
 - **Separação em Camadas**: Garante que a regra de negócio (Domain) seja independente de tecnologias externas.
